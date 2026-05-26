@@ -36,4 +36,4 @@ Fokus auf einen Proof of Concept, nicht auf eine produktionsreife Lösung. Ergeb
 Die Ergebnisse dienen als Grundlage, um die Machbarkeit eines standardisierten Prozesses zu beurteilen und mögliche Pilotanwendungen zu initiieren.
 Bei geeigneten Resultaten ist vorgesehen den Ansatz intern weiterzuverfolgen und die Lösung in einem konkreten Anwendungsfall weiter zu testen und auszubauen.
 
-📎 [HFFNW8JK.pdf](https://s3.govtech.digisus-lab.ch/govtech/uploads/18/QXKHM/HFFNW8JK.pdf)
+📎 Präsentation: [HFFNW8JK.pdf](https://s3.govtech.digisus-lab.ch/govtech/uploads/18/QXKHM/HFFNW8JK.pdf)
