@@ -6,10 +6,8 @@ df = pd.read_csv(
 )
 
 # Datum erstellen
-df["Datum"] = (
-    df["Jahr"].astype(str)
-    + "-"
-    + df["Monat"].astype(str).str.zfill(2)
+df["Datum"] = pd.to_datetime(
+    dict(year=df["Jahr"], month=df["Monat"], day=1)
 )
 
 # Jahr und Monat löschen
