@@ -11,3 +11,14 @@ https://opendata.swiss/de/dataset/schweizerische-elektrizitatsstatistik-schweize
 
 # Link zu Renkulab 
 https://renkulab.io/p/lucs/govtech-hackathon-2026
+
+
+ToDos csv:
+1) Datum erstellen
+2) NULL = " "
+3) Spalten: Datum, Definitiv,	Erzeugung_Laufwerk_GWh,	Erzeugung_Speicherwerk_GWh,	Erzeugung_Kernkraftwerk_GWh, Erzeugung_andere_GWh,	Erzeugung_Thermische_GWh,	Erzeugung_Windkraft_GWh,	Erzeugung_Photovoltaik_GWh"
+4) tidy colnames
+
+ToDo:
+Key Dimension: Datum
+Measure Dimensions: Erzeugungen
