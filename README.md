@@ -140,3 +140,10 @@ on:
 ```
 
 See [Crontab.guru](https://crontab.guru/) for help with CRON expressions.
+
+
+### To fix:
+https://int.visualize.admin.ch/browse?previous=%7B%22order%22%3A%22SCORE%22%2C%22search%22%3A%22Schweizerische+Elektrizit%C3%A4tsbilanz+Monatswerte%22%2C%22includeDrafts%22%3Atrue%7D&dataset=https%3A%2F%2Fenergy.ld.admin.ch%2Fsfoe%2Fap%2F%2Fogd35schweizerischeelektrizitaetsbilanzmonatswerte%2F1&dataSource=Int-uncached
+
+<img width="1841" height="714" alt="image" src="https://github.com/user-attachments/assets/247ba3bf-a13e-452e-9b89-15bb07c35e8e" />
+
