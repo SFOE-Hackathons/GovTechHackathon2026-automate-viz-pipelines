@@ -20,8 +20,8 @@ Date Created:
 Contact Point:
   E-Mail: # We discourage the use of personal e mails, it's advisable to use some shared inpersonal mail
   Name: # name of the contact
-Base-URI: https://energy.ld.admin.ch/sfoe/AP/ # technical term - you need to have a defined name space in which your data 'lives'. If unsure ask BAR
-Identifier: z.b bfe_ogd10_energieforschungsstatistik_ch # a unique (!) identifier for you data set
+Base-URI: https://energy.ld.admin.ch/sfoe/ap/ # technical term - you need to have a defined name space in which your data 'lives'. If unsure ask BAR
+Identifier: ogd35schweizerischeelektrizitaetsbilanzmonatswerte # a unique (!) identifier for you data set
 Version: # should be numeric
 Work Status:
   # Draft or Published
