@@ -1,0 +1,4 @@
+pylindas
+requests
+pandas
+pyyaml
