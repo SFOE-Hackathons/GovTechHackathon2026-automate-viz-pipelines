@@ -1,0 +1,151 @@
+Name:
+  de: CO2-Emissionen nach Energieträger - mit Limit in Zukunft
+  en: CO2 Emissions per energy source - with future limit
+  fr: CO2-Emissions par source d'energie - avec limit future
+  it: Emissioni di CO2 per fonte di energia - con limite futuro
+Description:
+  de: Ein Beispiel Cube mit einem Zielwert
+  en: An example Cube with a target value
+  fr: Un exemple de Cube avec une valeur cible
+  it: Un esempio di Cube con un valore obiettivo
+Publisher:
+  - IRI: https://register.ld.admin.ch/opendataswiss/org/bundesamt-fur-umwelt-bafu
+Creator:
+  - IRI: https://register.ld.admin.ch/opendataswiss/org/bundesamt-fur-umwelt-bafu
+Contributor:
+  - IRI: https://register.ld.admin.ch/opendataswiss/org/bundesamt-fur-umwelt-bafu
+    Name: Bundesamt für Umwelt
+Date Created:
+  2025-03-27
+Contact Point:
+  E-Mail: marco.kronenberg@bafu.admin.ch
+  Name: Bundesamt für Umwelt
+Base-URI: https://environment.ld.admin.ch/foen/test_target
+Identifier: target_future
+Version: 1
+Work Status:
+  Draft
+Visualize:
+  True
+# Optional but recommended
+Accrual Periodicity: yearly
+
+Namespace: limit_future
+
+dimensions:
+  Jahr:
+    name:
+      de: Jahr
+      fr: An
+      it: Anno
+      en: Year
+    description:
+      de: Jahr der Erhebung
+    dimension-type: Key Dimension
+    datatype: URI
+    scale-type: ordinal
+    path: year
+    data-kind:
+      type: temporal
+      unit: year
+    mapping:
+      type: additive
+      base: https://ld.admin.ch/time/year/
+
+  Energieträger:
+    name:
+      de: Energieträger
+      fr: Source d'energie
+      it: Fonte di energia
+      en: Energy source
+    description:
+      de: Energieträger der Objekte
+      fr: Source d'energie
+      it: Fonte di energia
+      en: Energy source
+    dimension-type: Key Dimension
+    datatype: URI
+    scale-type: nominal
+    path: energySource
+    mapping:
+      type: replace
+      replacements:
+        Brennstoffe: https://mock.ld.admin.ch/energySource/01
+        Treibstoffe: https://mock.ld.admin.ch/energySource/02
+
+  Nicht gerundeter Wert (Mt):
+    name:
+      de: CO2-Emissionen
+      en: CO2 Emissions
+      fr: CO2-Emissions
+      it: Emissioni di CO2
+    description:
+      de: Emissionen von CO2 in Millionen Tonnen
+      en: Emissions of CO2 in millions of tonnes
+      fr: Emissions de CO2 en millions de tonnes
+      it: Emissioni di CO2 in milioni di tonnellate
+    dimension-type: Measure Dimension
+    datatype: decimal
+    scale-type: ratio
+    path: co2Emissions
+    unit: MegaTONNE
+    annotation:
+      - type: limit-range
+        min-value: 1.708845e+01
+        max-value: 1.779072e+01
+        name:
+          de: Richtwertbande 2026 für Brennstoffe
+          en: target value range for thermal fuel 2026
+          fr: bande de valeurs cibles pour le combustible thermique 2026
+          it: bande di valori obiettivo per il combustibile termico 2026
+        context:
+          Jahr: 2026
+          Energieträger: Brennstoffe
+      - type: limit
+        value: 1.568392e+01
+        name:
+          de: Richtwert 2030 für Brennstoffe
+          en: target value for thermal fuel 2030
+          fr: valeur cible pour le combustible thermique 2030
+          it: valore obiettivo per il combustibile termico 2030
+        context:
+          Jahr: 2030
+          Energieträger: Brennstoffe
+      - type: limit
+        value: 1.849298e+01
+        name:
+          de: Richtwert 2033 für Brennstoffe
+          en: target value for thermal fuel 2033
+          fr: valeur cible pour le combustible thermique 2033
+          it: valore obiettivo per il combustibile termico 2033
+        context:
+          Jahr: 2033
+          Energieträger: Brennstoffe
+      - type: limit-range
+        min-value: 1.779072e+01
+        max-value: 1.82589e+01
+        name:
+          de: Richtwertbande 2014 für Brennstoffe
+          en: target value range for thermal fuel 2014
+          fr: bande de valeurs cibles pour le combustible thermique 2014
+          it: bande di valori obiettivo per il combustibile termico 2014
+        context:
+          Jahr: 2014
+          Energieträger: Brennstoffe
+
+  CO2-Emissionen (Mt):
+    name:
+      de: CO2-Emissionen (gerundet)
+      en: CO2 Emissions (rounded)
+      fr: CO2-Emissions (rounde)
+      it: Emissioni di CO2 (arrotondati)
+    description:
+      de: gerundete emissionen von CO2 in Millionen Tonnen
+      en: rounded emissions of CO2 in millions of tonnes
+      fr: arrondies emissions de CO2 en millions de tonnes
+      it: arrondite emissioni di CO2 in milioni di tonnellate
+    dimension-type: Measure Dimension
+    datatype: decimal
+    scale-type: ratio
+    path: roundedCO2Emissions
+    unit: MegaTONNE
