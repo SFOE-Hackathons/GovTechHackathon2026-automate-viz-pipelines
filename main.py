@@ -69,7 +69,7 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
     """
     # Create date column
     df = df.copy()
-    df["Datum"] = df["Jahr"].astype(str) + "-" + df["Monat"].astype(str).str.zfill(2)
+    df["Datum"] = pd.to_datetime(dict(year=df["Jahr"], month=df["Monat"], day=1)
 
     # Drop original date columns
     df.drop(columns=["Jahr", "Monat"], inplace=True)
