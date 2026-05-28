@@ -5,6 +5,9 @@
 
 # Beispiel GEST:
 ![etsat](slides/estat.png)
+
+# Link zu Schweizerische Elektrizitätsbilanz - Monatswerte
 https://opendata.swiss/de/dataset/schweizerische-elektrizitatsstatistik-schweizerische-elektrizitatsbilanz-monatswerte
 
+# Link zu Renkulab 
 https://renkulab.io/p/lucs/govtech-hackathon-2026
