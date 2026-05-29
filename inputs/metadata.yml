@@ -1,4 +1,160 @@
 Name: # Name of the data set in four languages
+  de: Schweizerische Elektrizitätsbilanz Monatswerte
+  en: Swiss electricity statistics monthly report
+  fr: Statistique suisse de l'électricité bilan mensuel
+  it: Statistica svizzera dell'elettricità bilancio mensile 
+Description: # a description of the data set in four languages
+  de: Die Schweizerische Elektrizitätsbilanz - Monatswerte gibt Auskunft über Produktion, Import / Export und Verbrauch von Elektrizität in der Schweiz auf monatlicher Basis. Bei der Produktion werden Wasserkraftwerke, Kernkraftwerke konventionell-thermische und erneuerbare Kraftwerke unterschieden.Die Produktion der thermischen Kraftwerke, der Windkraft- und Photovoltaikanlagen wird seit dem Jahr 2020 neu separat ausgewiesen. Der Verbrauch der Speicherpumpen und die Leitungsverluste werden ebenfalls ausgewiesen. Die monatliche Elektrizitätsbilanz wird im Rahmen der Elektrizitätsstatistik erstellt, welche Teil der öffentlichen Statistik der Schweiz ist (gesetzliche Grundlage BStatG).
+  fr: Cette statistique recense sur une base mensuelle la production, l'importation, l'exportation et la consommation d'électricité en Suisse. Elle présente la production des centrales hydrauliques, des centrales nucléaires, des centrales thermiques classiques et renouvelables. Elle indique la consommation des installations de pompage d'accumulation et les pertes en ligne. Elle est établie dans le cadre de la Statistique de l'électricité, qui fait partie de la statistique publique de la Suisse (base légale LSF).
+  it: Il bilancio mensile svizzero dell'elettricità fornisce informazioni sulla produzione, l’importazione, l’esportazione e il consumo di elettricità in Svizzera su base mensile. Per quanto riguarda la produzione, si distingue tra centrali idroelettriche, centrali nucleari, centrali termiche convenzionali e centrali rinnovabili. Vengono riportati il consumo delle pompe di accumulo e le perdite di linea.Il bilancio mensile dell'elettricità viene redatto nell'ambito della statistica dell'energia elettrica, che fa parte della statistica pubblica della Svizzera (base legale LStat).
+  en:
+Publisher: # who published the data? Should be an IRI like `https://register.ld.admin.ch/opendataswiss/org/...`
+  - IRI: https://register.ld.admin.ch/opendataswiss/org/bundesamt-fur-energie-bfe
+Creator: # who created the data? Should be an IRI like `https://register.ld.admin.ch/opendataswiss/org/...`
+  - IRI: https://register.ld.admin.ch/opendataswiss/org/bundesamt-fur-energie-bfe
+Contributor: # who contributed? Here, we expect an IRI as well as the name to be displayed
+  - IRI: https://register.ld.admin.ch/opendataswiss/org/bundesamt-fur-energie-bfe
+    Name: Bundesamt für Energie
+Date Created: 2026-05-29
+  # a date in ISO standard 
+Contact Point: 
+  E-Mail: ogd@bfe.admin.ch # We discourage the use of personal e mails, it's advisable to use some shared inpersonal mail
+  Name: OGD Bundesamt für Energie
+Base-URI: https://energy.ld.admin.ch/sfoe/ap # technical term - you need to have a defined name space in which your data 'lives'. If unsure ask BAR
+Identifier: ogd35schweizerischeelektrizitaetsbilanzmonatswerte  # a unique (!) identifier for you data set
+Version: 8 # should be numeric
+Work Status: Draft
+  # Draft or Published
+Visualize: true
+  # True or False depending on whether you want to be visible
+# Optional but recommended
+Accrual Periodicity: monthly
+
+Namespace: # technical - makes the resulting ttl file somewhat more readable
+
+dimensions:
+  # for each column in your data frame, you'll have to describe it here
+  datum : # the key for each dimension should match the name in data frame
+    name: # name of the column
+      de: Datum 
+      fr: Date
+      it: Data
+      en: Date
+    description: # description of the column
+      de: Datum (jedoch immer der 1. des Monats)
+      fr: Date
+      it: Data
+      en: Date
+    dimension-type: Key Dimension # Key Dimension, Measure Dimension or Annotation
+    datatype: date # Datatype according to XSD Vocabulary
+    scale-type: interval # nominal, ordinal, interval or scale 
+    path: datum # URI path for the predicate
+    unit: month # For the measurement dimension-> the unit in which meassured
+    data-kind: # optional: either geometry or temporal if it fits
+      type: temporal # temporal or spatial
+      unit: month # unit if temporal
+    mapping: # For URI, how are the URIs to be constructed?
+      type: # additive oder replacement
+      base: # for additive
+      mappings: # for replacement
+        
+  definitiv: 
+    name: 
+      de: Definitiv 
+      fr: 
+      it:
+      en:
+    description: 
+      de: Bestätigte Werte 
+      fr:  
+      it:
+      en: 
+    dimension-type:  
+    datatype: integer 
+    scale-type: nominal 
+    path: definitiv 
+    unit:  
+    data-kind: 
+      type: 
+      unit: 
+    mapping: 
+      type: 
+      base: 
+      mappings: 
+  
+  landesverbrauch_gwh_monat: 
+      name:
+        de: GWh Landesverbrauch
+        fr:
+        it:  
+        en: 
+      description: 
+        de: Gigawattstunden des Landesverbrauches
+        fr:  
+        it: 
+        en:  
+      dimension-type: Measure Dimension 
+      datatype: integer 
+      scale-type: ratio 
+      path: landesverbrauch_gwh
+      unit: KiloGM
+      data-kind: 
+        type: 
+        unit: 
+      mapping: 
+        type: 
+        base: 
+        mappings:
+
+      
+      #-----------------
+  erzeugungs_art: # the key for each dimension should match the name in data frame
+    name: # name of the column
+      de: Erzeugungsart
+      fr: 
+      it: 
+      en: 
+    description: # description of the column
+      de: Erzeugungsart
+      fr: 
+      it: 
+      en: 
+    dimension-type: Key Dimension # Key Dimension, Measure Dimension or Annotation
+    datatype: string # Datatype according to XSD Vocabulary
+    scale-type: nominal # nominal, ordinal, intervall or scale 
+    path: erzeugungsart # URI path for the predicate
+    unit: # For the measurement dimension- the unit in which meassured
+    data-kind: # optional: either geometry or temporal if it fits
+      type: # temporal or spatial
+      unit: # unit if temporal
+    mapping: # For URI, how are the URIs to be constructed?
+      type: # additive oder replacement
+      base: # for additive
+      mappings: # for replacement 
+      
+  gwh: 
+    name:
+      de: GWh
+      fr:
+      it:  
+      en: 
+    description: 
+      de: Gigawattstunden 
+      fr:  
+      it: 
+      en:  
+    dimension-type: Measure Dimension 
+    datatype: integer 
+    scale-type: ratio 
+    path: gwh 
+    unit: KiloW-HR 
+    data-kind: 
+      type: 
+      unit: 
+    mapping: 
+      type: 
+      base: 
+      mappings: Name: # Name of the data set in four languages
   de: Schweizerischer Landesverbrauch Energie
   en: Swiss national energy consumption
   fr: 
