@@ -6,7 +6,7 @@ Name: # Name of the data set in four languages
 Description: # a description of the data set in four languages
   de: Die Schweizerische Elektrizitätsbilanz - Monatswerte gibt Auskunft über Produktion, Import / Export und Verbrauch von Elektrizität in der Schweiz auf monatlicher Basis. Bei der Produktion werden Wasserkraftwerke, Kernkraftwerke konventionell-thermische und erneuerbare Kraftwerke unterschieden.Die Produktion der thermischen Kraftwerke, der Windkraft- und Photovoltaikanlagen wird seit dem Jahr 2020 neu separat ausgewiesen. Der Verbrauch der Speicherpumpen und die Leitungsverluste werden ebenfalls ausgewiesen. Die monatliche Elektrizitätsbilanz wird im Rahmen der Elektrizitätsstatistik erstellt, welche Teil der öffentlichen Statistik der Schweiz ist (gesetzliche Grundlage BStatG).
   fr: Cette statistique recense sur une base mensuelle la production, l'importation, l'exportation et la consommation d'électricité en Suisse. Elle présente la production des centrales hydrauliques, des centrales nucléaires, des centrales thermiques classiques et renouvelables. Elle indique la consommation des installations de pompage d'accumulation et les pertes en ligne. Elle est établie dans le cadre de la Statistique de l'électricité, qui fait partie de la statistique publique de la Suisse (base légale LSF).
-  it: Il bilancio mensile svizzero dell'elettricità fornisce informazioni sulla produzione, l’importazione, l’esportazione e il consumo di elettricità in Svizzera su base mensile. Per quanto riguarda la produzione, si distingue tra centrali idroelettriche, centrali nucleari, centrali termiche convenzionali e centrali rinnovabili. Vengono riportati il consumo delle pompe di accumulo e le perdite di linea.Il bilancio mensile dell'elettricità viene redatto nell'ambito della statistica dell'energia elettrica, che fa parte della statistica pubblica della Svizzera (base legale LStat).
+  it: Il bilancio mensile svizzero dell'elettricità fornisce informazioni sulla produzione, l'importazione, l'esportazione e il consumo di elettricità in Svizzera su base mensile. Per quanto riguarda la produzione, si distingue tra centrali idroelettriche, centrali nucleari, centrali termiche convenzionali e centrali rinnovabili. Vengono riportati il consumo delle pompe di accumulo e le perdite di linea.Il bilancio mensile dell'elettricità viene redatto nell'ambito della statistica dell'energia elettrica, che fa parte della statistica pubblica della Svizzera (base legale LStat).
   en:
 Publisher: # who published the data? Should be an IRI like `https://register.ld.admin.ch/opendataswiss/org/...`
   - IRI: https://register.ld.admin.ch/opendataswiss/org/bundesamt-fur-energie-bfe
@@ -33,101 +33,96 @@ Accrual Periodicity: monthly
 Namespace: # technical - makes the resulting ttl file somewhat more readable
 
 dimensions:
-  # for each column in your data frame, you'll have to describe it here
-  datum : # the key for each dimension should match the name in data frame
-    name: # name of the column
-      de: Datum 
+  datum:
+    name:
+      de: Datum
       fr: Date
       it: Data
       en: Date
-    description: # description of the column
+    description:
       de: Datum (jedoch immer der 1. des Monats)
       fr: Date
       it: Data
       en: Date
-    dimension-type: Key Dimension # Key Dimension, Measure Dimension or Annotation
-    datatype: xsd:date # Datatype according to XSD Vocabulary
-    scale-type: ordinal # nominal, ordinal, interval or scale 
-    path: datum # URI path for the predicate
-    unit: month # For the measurement dimension-> the unit in which meassured
-    data-kind: # optional: either geometry or temporal if it fits
-      type: temporal # temporal or spatial
-      unit: month # unit if temporal
-    mapping: # For URI, how are the URIs to be constructed?
-      type: # additive oder replacement
-      base: # for additive
-      mappings: # for replacement
-      
-      #-----------------
-  erzeugung_laufwerk_gwh : # the key for each dimension should match the name in data frame
-    name: # name of the column
-      de: Erzeugung Laufwerk 
-      fr: Production au fil de l'eau
-      it: Generazione ad acqua fluente
-      en: Run-of-river generation
-    description: # description of the column
-      de: Erzeugung Laufwerk
-      fr: Production au fil de l'eau
-      it: Generazione ad acqua fluente
-      en: Run-of-river generation
-    dimension-type: Measure Dimension # Key Dimension, Measure Dimension or Annotation
-    datatype: xsd:integer # Datatype according to XSD Vocabulary
-    scale-type: nominal # nominal, ordinal, intervall or scale 
-    path: laufwerk # URI path for the predicate
-    unit: GWh # For the measurement dimension- the unit in which meassured
-    data-kind: # optional: either geometry or temporal if it fits
-      type: # temporal or spatial
-      unit: # unit if temporal
-    mapping: # For URI, how are the URIs to be constructed?
-      type: # additive oder replacement
-      base: # for additive
-      mappings: # for replacement 
-      
-  erzeugung_speicherwerk_gwh: 
+    dimension-type: Key Dimension
+    datatype: xsd:date
+    scale-type: ordinal
+    path: datum
+    unit: month
+    data-kind:
+      type: temporal
+      unit: month
+    mapping:
+      type:
+      base:
+      mappings:
+
+  erzeugungstyp:
     name:
-      de: Erzeugung Speicherwerk 
-      fr: Production centrales à accumulation 
-      it: Produzione centrali ad accumulazione 
-      en: Generation storage power plants 
-    description: 
-      de: Elektrizitätserzeugung aus Speicherwerken in Gigawattstunden 
-      fr: Production d'électricité des centrales à accumulation en gigawattheures 
-      it: Produzione di elettricità delle centrali ad accumulazione in gigawattora 
-      en: Electricity generation from storage power plants in gigawatt hours 
-    dimension-type: Measure Dimension 
-    datatype: xsd:integer 
-    scale-type: ratio 
-    path: speicherwerk 
-    unit: GWh 
-    data-kind: 
-      type: 
-      unit: 
-    mapping: 
-      type: 
-      base: 
-      mappings: 
-      
-erzeugung_kernkraftwerk_gwh: 
-  name: 
-    de: Erzeugung Kernkraftwerk 
-    fr: Production centrales nucléaires 
-    it: Produzione centrali nucleari 
-    en: Generation nuclear power plants 
-  description: 
-    de: Elektrizitätserzeugung aus Kernkraftwerken in Gigawattstunden 
-    fr: Production d'électricité des centrales nucléaires en gigawattheures 
-    it: Produzione di elettricità delle centrali nucleari in gigawattora 
-    en: Electricity generation from nuclear power plants in gigawatt hours 
-  dimension-type: Measure Dimension 
-  datatype: xsd:integer 
-  scale-type: ratio 
-  path: kernkraftwerk 
-  unit: GWh 
-  data-kind: 
-    type: 
-    unit: 
-  mapping: 
-    type: 
-    base: 
-    mappings: 
-  
+      de: Erzeugungstyp
+      fr: Type de production
+      it: Tipo di produzione
+      en: Generation type
+    description:
+      de: Art der Stromerzeugung
+      fr: Type de production d'électricité
+      it: Tipo di produzione di elettricità
+      en: Type of electricity generation
+    dimension-type: Key Dimension
+    datatype: xsd:string
+    scale-type: nominal
+    path: erzeugungstyp
+    data-kind:
+      type:
+      unit:
+    mapping:
+      type:
+      base:
+      mappings:
+
+  definitiv:
+    name:
+      de: Definitiv
+      fr: Définitif
+      it: Definitivo
+      en: Definitive
+    description:
+      de: Angabe ob die Daten definitiv (1) oder provisorisch (0) sind
+      fr: Indication si les données sont définitives (1) ou provisoires (0)
+      it: Indicazione se i dati sono definitivi (1) o provvisori (0)
+      en: Indicates whether data is definitive (1) or provisional (0)
+    dimension-type: Standard Dimension
+    datatype: xsd:integer
+    scale-type: nominal
+    path: definitiv
+    data-kind:
+      type:
+      unit:
+    mapping:
+      type:
+      base:
+      mappings:
+
+  gwh:
+    name:
+      de: Erzeugung in GWh
+      fr: Production en GWh
+      it: Produzione in GWh
+      en: Generation in GWh
+    description:
+      de: Elektrizitätserzeugung in Gigawattstunden
+      fr: Production d'électricité en gigawattheures
+      it: Produzione di elettricità in gigawattora
+      en: Electricity generation in gigawatt hours
+    dimension-type: Measure Dimension
+    datatype: xsd:integer
+    scale-type: ratio
+    path: gwh
+    unit: GWh
+    data-kind:
+      type:
+      unit:
+    mapping:
+      type:
+      base:
+      mappings:

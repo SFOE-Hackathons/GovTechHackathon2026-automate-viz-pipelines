@@ -8,6 +8,17 @@ import pandas as pd
 import yaml
 from pylindas import Cube
 
+GENERATION_COLUMNS: dict[str, str] = {
+    "Erzeugung_Laufwerk_GWh": "Laufwerk",
+    "Erzeugung_Speicherwerk_GWh": "Speicherwerk",
+    "Erzeugung_Kernkraftwerk_GWh": "Kernkraftwerk",
+    "Erzeugung_andere_GWh": "andere",
+    "Erzeugung_Thermische_GWh": "Thermische",
+    "Erzeugung_Windkraft_GWh": "Windkraft",
+    "Erzeugung_Photovoltaik_GWh": "Photovoltaik",
+}
+
+
 def download_csv(url: str, timeout: tuple[int, int] = (30, 120), retries: int = 3) -> str:
     """Download CSV from URL with exponential backoff retry.
 
@@ -55,38 +66,44 @@ def validate_data(df: pd.DataFrame, required_columns: list[str]) -> None:
 
 
 def transform_data(df: pd.DataFrame) -> pd.DataFrame:
-    """Transform raw CSV data into cube-ready format.
+    """Transform raw wide-format CSV data into long-format cube-ready structure.
 
-    Creates a date column from Jahr/Monat, selects relevant columns,
-    lowercases names, rounds numbers, and replaces NaN with empty strings.
+    Melts 7 generation-type columns into rows, producing a DataFrame with
+    columns: datum, definitiv, erzeugungstyp, gwh.
 
     Args:
-        df: Raw DataFrame with columns Jahr, Monat, Erzeugung_Laufwerk_GWh
+        df: Raw DataFrame with columns Jahr, Monat, Definitiv, and 7 generation columns.
 
     Returns:
-        Transformed DataFrame with columns: datum, erzeugung_laufwerk_gwh
+        Long-format DataFrame with columns: datum, definitiv, erzeugungstyp, gwh.
     """
-    # Create date column
     df = df.copy()
-    df["Datum"] = pd.to_datetime(dict(year=df["Jahr"], month=df["Monat"], day=1))
 
-    # Drop original date columns
-    df.drop(columns=["Jahr", "Monat"], inplace=True)
+    # Create date column (first day of month)
+    df["datum"] = pd.to_datetime(dict(year=df["Jahr"], month=df["Monat"], day=1))
 
-    # Select desired columns
-    df = df[["Datum", "Erzeugung_Laufwerk_GWh", "Erzeugung_Speicherwerk_GWh", "Erzeugung_Kernkraftwerk_GWh"]]
+    # Extract definitiv flag as integer
+    df["definitiv"] = df["Definitiv"].astype(int)
 
-    # Lowercase column names
-    df.columns = df.columns.str.lower()
+    # Melt generation columns into long format
+    melted = pd.melt(
+        df,
+        id_vars=["datum", "definitiv"],
+        value_vars=list(GENERATION_COLUMNS.keys()),
+        var_name="erzeugungstyp",
+        value_name="gwh",
+    )
 
-    # Round numeric columns and cast to Int64
-    numeric_cols = df.select_dtypes(include="number").columns
-    df[numeric_cols] = df[numeric_cols].round(0).astype("Int64")
+    # Map raw column names to cleaned short labels
+    melted["erzeugungstyp"] = melted["erzeugungstyp"].map(GENERATION_COLUMNS)
 
-    # Replace NaN/NA with empty strings
-    df = df.astype(str).replace(["<NA>", "NaN", "nan"], "")
+    # Round gwh values and cast to Int64 (nullable integer)
+    melted["gwh"] = melted["gwh"].round(0).astype("Int64")
 
-    return df
+    # Replace NaN/NA with empty strings for cube compatibility
+    melted = melted.astype(str).replace(["<NA>", "NaN", "nan"], "")
+
+    return melted
 
 
 def create_cube(df: pd.DataFrame, metadata_path: str, environment: str = "INT") -> Cube:
@@ -143,7 +160,7 @@ def main() -> None:
     logger = logging.getLogger(__name__)
 
     CSV_URL = "https://www.uvek-gis.admin.ch/BFE/ogd/35/ogd35_schweizerische_elektrizitaetsbilanz_monatswerte.csv"
-    REQUIRED_COLUMNS = ["Jahr", "Monat", "Erzeugung_Laufwerk_GWh", "Erzeugung_Speicherwerk_GWh", "Erzeugung_Kernkraftwerk_GWh"]
+    REQUIRED_COLUMNS = ["Jahr", "Monat", "Definitiv", "Erzeugung_Laufwerk_GWh", "Erzeugung_Speicherwerk_GWh", "Erzeugung_Kernkraftwerk_GWh", "Erzeugung_andere_GWh", "Erzeugung_Thermische_GWh", "Erzeugung_Windkraft_GWh", "Erzeugung_Photovoltaik_GWh"]
     METADATA_PATH = "inputs/metadata.yml"
     OUTPUT_PATH = "outputs/cube.ttl"
 
