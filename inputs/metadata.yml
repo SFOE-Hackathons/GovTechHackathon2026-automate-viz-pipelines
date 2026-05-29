@@ -46,8 +46,8 @@ dimensions:
       it: Data
       en: Date
     dimension-type: Key Dimension # Key Dimension, Measure Dimension or Annotation
-    datatype: xsd:date # Datatype according to XSD Vocabulary
-    scale-type: ordinal # nominal, ordinal, interval or scale 
+    datatype: date # Datatype according to XSD Vocabulary
+    scale-type: interval # nominal, ordinal, interval or scale 
     path: datum # URI path for the predicate
     unit: month # For the measurement dimension-> the unit in which meassured
     data-kind: # optional: either geometry or temporal if it fits
