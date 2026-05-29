@@ -1,5 +1,5 @@
 # Pipeline Blueprint
-
+demo: demo: https://typit.in/this
 ## Introduction
 
 This repository provides a blueprint for generating and uploading RDF triples — primarily in the `cube:Cube` format — to **LINDAS**. The upload process is automated using **GitHub Actions**, and several configuration options are provided that can be easily adapted for different use cases.
