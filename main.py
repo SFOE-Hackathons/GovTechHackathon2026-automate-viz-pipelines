@@ -74,7 +74,7 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
     df.drop(columns=["Jahr", "Monat"], inplace=True)
 
     # Select desired columns
-    df = df[["Datum", "Erzeugung_Laufwerk_GWh"]]
+    df = df[["Datum", "Erzeugung_Laufwerk_GWh", "Erzeugung_Speicherwerk_GWh", "Erzeugung_Kernkraftwerk_GWh"]]
 
     # Lowercase column names
     df.columns = df.columns.str.lower()
