@@ -74,8 +74,16 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
     df.drop(columns=["Jahr", "Monat"], inplace=True)
 
     # Select desired columns
-    df = df[["Datum", "Erzeugung_Laufwerk_GWh", "Erzeugung_Speicherwerk_GWh", "Erzeugung_Kernkraftwerk_GWh"]]
-
+    df = df[["Datum",  "Definitiv", "Erzeugung_Laufwerk_GWh", "Erzeugung_Speicherwerk_GWh", "Erzeugung_Kernkraftwerk_GWh"]]
+    
+    #transform wide to Long
+    df.melt(id_vars=[ 'Datum', 'Definitiv'],
+        value_vars=[ "Erzeugung_Laufwerk_GWh", "Erzeugung_Speicherwerk_GWh", "Erzeugung_Kernkraftwerk_GWh"],
+        var_name='Erzeugungstyp',
+        value_name='GWh')
+    print(df)
+    
+    df.pivot(index=['Datum', 'Definitiv'], value_vars=['A', 'B', 'C']columns='columns', values='wert')
     # Lowercase column names
     df.columns = df.columns.str.lower()
 
