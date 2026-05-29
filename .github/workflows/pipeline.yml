@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ github.ref_name == 'main' && 'PROD' || github.ref_name == 'develop' && 'INT' || 'TEST' }}
     env:
-      UPLOAD_METHOD: "PUT"
+      UPLOAD_METHOD: "POST"
       UPLOAD_PATH: "outputs"
       ENDPOINT_GRAPH: ${{ secrets.ENDPOINT_GRAPH }}
       ENDPOINT_USER: ${{ secrets.ENDPOINT_USER }}
