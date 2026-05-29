@@ -84,17 +84,18 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
         "Erzeugung_andere_GWh",
         "Erzeugung_Thermische_GWh",
         "Erzeugung_Windkraft_GWh",
-        "Erzeugung_Photovoltaik_GWh"
+        "Erzeugung_Photovoltaik_GWh",
+        "Landesverbrauch_GWh"
     ]]
 
     df = (
         df
-        .set_index(["Datum", "Definitiv"])
+        .set_index(["datum", "definitiv", "landesverbrauch_gwh"])
         .stack()
         .reset_index(name="gwh")
     )
 
-    df.columns = ["datum", "definitiv", "erzeugungs_art", "gwh"]
+    df.columns = ["datum", "definitiv",  "landesverbrauch_gwh_monat", "energie_typ", "gwh"]
     print(df)
 
 
