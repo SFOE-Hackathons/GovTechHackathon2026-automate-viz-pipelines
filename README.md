@@ -1,5 +1,4 @@
 # Pipeline Blueprint
-demo: https://typit.in/this
 
 ## Introduction
 
