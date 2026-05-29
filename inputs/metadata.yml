@@ -15,14 +15,14 @@ Creator: # who created the data? Should be an IRI like `https://register.ld.admi
 Contributor: # who contributed? Here, we expect an IRI as well as the name to be displayed
   - IRI: https://register.ld.admin.ch/opendataswiss/org/bundesamt-fur-energie-bfe
     Name: Bundesamt für Energie
-Date Created: 2026-05-28
+Date Created: 2026-05-29
   # a date in ISO standard 
 Contact Point: 
   E-Mail: ogd@bfe.admin.ch # We discourage the use of personal e mails, it's advisable to use some shared inpersonal mail
   Name: OGD Bundesamt für Energie
 Base-URI: https://energy.ld.admin.ch/sfoe/ap # technical term - you need to have a defined name space in which your data 'lives'. If unsure ask BAR
 Identifier: ogd35schweizerischeelektrizitaetsbilanzmonatswerte # a unique (!) identifier for you data set
-Version: 1 # should be numeric
+Version: 2 # should be numeric
 Work Status: Draft
   # Draft or Published
 Visualize: true
@@ -52,7 +52,7 @@ dimensions:
     unit: month # For the measurement dimension-> the unit in which meassured
     data-kind: # optional: either geometry or temporal if it fits
       type: temporal # temporal or spatial
-      unit: day # unit if temporal
+      unit: month # unit if temporal
     mapping: # For URI, how are the URIs to be constructed?
       type: # additive oder replacement
       base: # for additive
