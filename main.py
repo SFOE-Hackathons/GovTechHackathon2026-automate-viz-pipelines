@@ -83,7 +83,7 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
         value_name='GWh')
     print(df)
     
-    df.pivot(index=['Datum', 'Definitiv'], value_vars=['A', 'B', 'C']columns='columns', values='wert')
+ 
     # Lowercase column names
     df.columns = df.columns.str.lower()
 
