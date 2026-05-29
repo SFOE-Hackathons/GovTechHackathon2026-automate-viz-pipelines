@@ -75,14 +75,7 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
 
     # Select desired columns
     df = df[["Datum",  "Definitiv", "Erzeugung_Laufwerk_GWh", "Erzeugung_Speicherwerk_GWh", "Erzeugung_Kernkraftwerk_GWh"]]
-    
-    #transform wide to Long
-    df.melt(id_vars=[ 'Datum', 'Definitiv'],
-        value_vars=[ "Erzeugung_Laufwerk_GWh", "Erzeugung_Speicherwerk_GWh", "Erzeugung_Kernkraftwerk_GWh"],
-        var_name='Erzeugungstyp',
-        value_name='GWh')
-    print(df)
-    
+
  
     # Lowercase column names
     df.columns = df.columns.str.lower()
