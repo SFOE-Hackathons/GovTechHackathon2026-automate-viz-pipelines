@@ -94,6 +94,7 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
     )
 
     df.columns = ["datum", "definitiv", "erzeugungs_art", "gwh"]
+    print(df)
 
 
     # Round numeric columns and cast to Int64
