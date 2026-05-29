@@ -1,8 +1,8 @@
 Name: # Name of the data set in four languages
-  de: Schweizerische Elektrizitätsbilanz Monatswerte
-  en: Swiss electricity statistics monthly report
-  fr: Statistique suisse de l'électricité bilan mensuel
-  it: Statistica svizzera dell'elettricità bilancio mensile 
+  de: Schweizerischer Landesverbrauch Energie
+  en: Swiss national energy consumption
+  fr: 
+  it: 
 Description: # a description of the data set in four languages
   de: Die Schweizerische Elektrizitätsbilanz - Monatswerte gibt Auskunft über Produktion, Import / Export und Verbrauch von Elektrizität in der Schweiz auf monatlicher Basis. Bei der Produktion werden Wasserkraftwerke, Kernkraftwerke konventionell-thermische und erneuerbare Kraftwerke unterschieden.Die Produktion der thermischen Kraftwerke, der Windkraft- und Photovoltaikanlagen wird seit dem Jahr 2020 neu separat ausgewiesen. Der Verbrauch der Speicherpumpen und die Leitungsverluste werden ebenfalls ausgewiesen. Die monatliche Elektrizitätsbilanz wird im Rahmen der Elektrizitätsstatistik erstellt, welche Teil der öffentlichen Statistik der Schweiz ist (gesetzliche Grundlage BStatG).
   fr: Cette statistique recense sur une base mensuelle la production, l'importation, l'exportation et la consommation d'électricité en Suisse. Elle présente la production des centrales hydrauliques, des centrales nucléaires, des centrales thermiques classiques et renouvelables. Elle indique la consommation des installations de pompage d'accumulation et les pertes en ligne. Elle est établie dans le cadre de la Statistique de l'électricité, qui fait partie de la statistique publique de la Suisse (base légale LSF).
@@ -20,7 +20,7 @@ Date Created: 2026-05-29
 Contact Point: 
   E-Mail: ogd@bfe.admin.ch # We discourage the use of personal e mails, it's advisable to use some shared inpersonal mail
   Name: OGD Bundesamt für Energie
-Base-URI: https://energy.ld.admin.ch/sfoe/ap # technical term - you need to have a defined name space in which your data 'lives'. If unsure ask BAR
+Base-URI: https://energy.ld.admin.ch/sfoe/aps # technical term - you need to have a defined name space in which your data 'lives'. If unsure ask BAR
 Identifier: landesverbauchemonatlich # a unique (!) identifier for you data set
 Version: 1 # should be numeric
 Work Status: Draft
