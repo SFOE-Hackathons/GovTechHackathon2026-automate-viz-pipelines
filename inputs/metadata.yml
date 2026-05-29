@@ -21,8 +21,8 @@ Contact Point:
   E-Mail: ogd@bfe.admin.ch # We discourage the use of personal e mails, it's advisable to use some shared inpersonal mail
   Name: OGD Bundesamt für Energie
 Base-URI: https://energy.ld.admin.ch/sfoe/ap # technical term - you need to have a defined name space in which your data 'lives'. If unsure ask BAR
-Identifier: ogd35schweizerischeelektrizitaetsbilanzmonatswerte # a unique (!) identifier for you data set
-Version: 7 # should be numeric
+Identifier: landesverbauchemonatlich # a unique (!) identifier for you data set
+Version: 1 # should be numeric
 Work Status: Draft
   # Draft or Published
 Visualize: true
