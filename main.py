@@ -95,7 +95,7 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
         .reset_index(name="gwh")
     )
 
-    df.columns = ["datum", "definitiv",  "landesverbrauch_gwh_monat", "energie_typ", "gwh"]
+    df.columns = ["datum", "definitiv",  "landesverbrauch_gwh_monat", "erzeugungs_art", "gwh"]
     print(df)
 
 
