@@ -22,7 +22,7 @@ Contact Point:
   Name: OGD Bundesamt für Energie
 Base-URI: https://energy.ld.admin.ch/sfoe/apverbrauch # technical term - you need to have a defined name space in which your data 'lives'. If unsure ask BAR
 Identifier: landesverbauchemonatlich # a unique (!) identifier for you data set
-Version: 1 # should be numeric
+Version: 2 # should be numeric
 Work Status: Draft
   # Draft or Published
 Visualize: true
@@ -97,7 +97,7 @@ dimensions:
       datatype: integer 
       scale-type: ratio 
       path: landesverbrauch_gwh
-      unit: KiloGM
+      unit: KiloW-HR
       data-kind: 
         type: 
         unit: 
