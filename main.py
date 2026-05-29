@@ -90,7 +90,7 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
 
     df = (
         df
-        .set_index(["datum", "definitiv", "landesverbrauch_gwh"])
+        .set_index(["Datum", "Definitiv", "Landesverbrauch_GWh"])
         .stack()
         .reset_index(name="gwh")
     )
