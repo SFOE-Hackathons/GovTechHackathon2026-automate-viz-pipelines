@@ -71,7 +71,7 @@ dimensions:
       it: 
       en: 
     dimension-type: Key Dimension # Key Dimension, Measure Dimension or Annotation
-    datatype: xsd:string # Datatype according to XSD Vocabulary
+    datatype: string # Datatype according to XSD Vocabulary
     scale-type: nominal # nominal, ordinal, intervall or scale 
     path: erzeugungsart # URI path for the predicate
     unit: # For the measurement dimension- the unit in which meassured
@@ -95,7 +95,7 @@ dimensions:
       it: 
       en:  
     dimension-type: Measure Dimension 
-    datatype: xsd:integer 
+    datatype: integer 
     scale-type: ratio 
     path: gwh 
     unit: GWh 
@@ -119,7 +119,7 @@ dimensions:
       it:
       en: 
     dimension-type:  
-    datatype: xsd:integer 
+    datatype: integer 
     scale-type: nominal 
     path: definitiv 
     unit:  
@@ -131,3 +131,26 @@ dimensions:
       base: 
       mappings: 
   
+  landesverbrauch_gwh_monat: 
+      name:
+        de: GWh Landesverbrauch
+        fr:
+        it:  
+        en: 
+      description: 
+        de: Gigawattstunden des Landesverbrauches
+        fr:  
+        it: 
+        en:  
+      dimension-type: Measure Dimension 
+      datatype: integer 
+      scale-type: ratio 
+      path: gwh 
+      unit: GWh 
+      data-kind: 
+        type: 
+        unit: 
+      mapping: 
+        type: 
+        base: 
+        mappings:
