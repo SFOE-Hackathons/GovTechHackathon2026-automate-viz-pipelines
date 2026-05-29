@@ -1,12 +1,12 @@
 Name: # Name of the data set in four languages
   de: Schweizerische Elektrizitätsbilanz Monatswerte
-  en: 
-  fr: 
-  it: 
+  en: Swiss electricity statistics monthly report
+  fr: Statistique suisse de l'électricité bilan mensuel
+  it: Statistica svizzera dell'elettricità bilancio mensile 
 Description: # a description of the data set in four languages
-  de: Die Schweizerische Elektrizitätsbilanz - Monatswerte gibt Auskunft über Produktion, Import / Export und Verbrauch von Elektrizität in der Schweiz auf monatlicher Basis. Bei der Produktion werden Wasserkraftwerke, Kernkraftwerke konventionell-thermische und erneuerbare Kraftwerke unterschieden.Die Produktion der thermischen Kraftwerke, der Windkraft- und Photovoltaikanlagen wird seit dem Jahr 2020 neu separat ausgewiesen. Der Verbrauch der Speicherpumpen und die Leitungsverluste werden ebenfalls ausgewiesen. Die monatliche Elektrizitätsbilanz wird im Rahmen der Elektrizitätsstatistik erstellt, welche Teil der öffentlichen Statistik der Schweiz ist (gesetzliche Grundlage:BStatG).
-  fr:
-  it:
+  de: Die Schweizerische Elektrizitätsbilanz - Monatswerte gibt Auskunft über Produktion, Import / Export und Verbrauch von Elektrizität in der Schweiz auf monatlicher Basis. Bei der Produktion werden Wasserkraftwerke, Kernkraftwerke konventionell-thermische und erneuerbare Kraftwerke unterschieden.Die Produktion der thermischen Kraftwerke, der Windkraft- und Photovoltaikanlagen wird seit dem Jahr 2020 neu separat ausgewiesen. Der Verbrauch der Speicherpumpen und die Leitungsverluste werden ebenfalls ausgewiesen. Die monatliche Elektrizitätsbilanz wird im Rahmen der Elektrizitätsstatistik erstellt, welche Teil der öffentlichen Statistik der Schweiz ist (gesetzliche Grundlage BStatG).
+  fr: Cette statistique recense sur une base mensuelle la production, l'importation, l'exportation et la consommation d'électricité en Suisse. Elle présente la production des centrales hydrauliques, des centrales nucléaires, des centrales thermiques classiques et renouvelables. Elle indique la consommation des installations de pompage d'accumulation et les pertes en ligne. Elle est établie dans le cadre de la Statistique de l'électricité, qui fait partie de la statistique publique de la Suisse (base légale LSF).
+  it: Il bilancio mensile svizzero dell'elettricità fornisce informazioni sulla produzione, l’importazione, l’esportazione e il consumo di elettricità in Svizzera su base mensile. Per quanto riguarda la produzione, si distingue tra centrali idroelettriche, centrali nucleari, centrali termiche convenzionali e centrali rinnovabili. Vengono riportati il consumo delle pompe di accumulo e le perdite di linea.Il bilancio mensile dell'elettricità viene redatto nell'ambito della statistica dell'energia elettrica, che fa parte della statistica pubblica della Svizzera (base legale LStat).
   en:
 Publisher: # who published the data? Should be an IRI like `https://register.ld.admin.ch/opendataswiss/org/...`
   - IRI: https://register.ld.admin.ch/opendataswiss/org/bundesamt-fur-energie-bfe
@@ -41,7 +41,7 @@ dimensions:
       it: Data
       en: Date
     description: # description of the column
-      de: Datum
+      de: Datum (jedoch immer der 1. des Monats)
       fr: Date
       it: Data
       en: Date
@@ -62,14 +62,14 @@ dimensions:
   erzeugung_laufwerk_gwh : # the key for each dimension should match the name in data frame
     name: # name of the column
       de: Erzeugung Laufwerk 
-      fr: Erzeugung Laufwerk
-      it: Erzeugung Laufwerk
-      en: Erzeugung Laufwerk
+      fr: Production au fil de l'eau
+      it: Generazione ad acqua fluente
+      en: Run-of-river generation
     description: # description of the column
       de: Erzeugung Laufwerk
-      fr: Erzeugung Laufwerk
-      it: Erzeugung Laufwerk
-      en: Erzeugung Laufwerk
+      fr: Production au fil de l'eau
+      it: Generazione ad acqua fluente
+      en: Run-of-river generation
     dimension-type: Measure Dimension # Key Dimension, Measure Dimension or Annotation
     datatype: xsd:integer # Datatype according to XSD Vocabulary
     scale-type: nominal # nominal, ordinal, intervall or scale 

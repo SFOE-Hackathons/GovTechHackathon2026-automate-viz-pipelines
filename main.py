@@ -8,8 +8,6 @@ import pandas as pd
 import yaml
 from pylindas import Cube
 
-
-
 def download_csv(url: str, timeout: tuple[int, int] = (30, 120), retries: int = 3) -> str:
     """Download CSV from URL with exponential backoff retry.
 
