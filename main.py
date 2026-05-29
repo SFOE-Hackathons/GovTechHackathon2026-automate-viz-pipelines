@@ -88,7 +88,7 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
 
     df = (
         df
-        .set_index(["datum", "definitiv"])[cols]
+        .set_index(["Datum", "Definitiv"])[cols]
         .stack()
         .reset_index(name="gwh")
     )
