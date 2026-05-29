@@ -107,27 +107,27 @@ dimensions:
       base: 
       mappings: 
       
-erzeugung_kernkraftwerk_gwh: 
-  name: 
-    de: Erzeugung Kernkraftwerk 
-    fr: Production centrales nucléaires 
-    it: Produzione centrali nucleari 
-    en: Generation nuclear power plants 
-  description: 
-    de: Elektrizitätserzeugung aus Kernkraftwerken in Gigawattstunden 
-    fr: Production d'électricité des centrales nucléaires en gigawattheures 
-    it: Produzione di elettricità delle centrali nucleari in gigawattora 
-    en: Electricity generation from nuclear power plants in gigawatt hours 
-  dimension-type: Measure Dimension 
-  datatype: xsd:integer 
-  scale-type: ratio 
-  path: kernkraftwerk 
-  unit: GWh 
-  data-kind: 
-    type: 
-    unit: 
-  mapping: 
-    type: 
-    base: 
-    mappings: 
+  erzeugung_kernkraftwerk_gwh: 
+    name: 
+      de: Erzeugung Kernkraftwerk 
+      fr: Production centrales nucléaires 
+      it: Produzione centrali nucleari 
+      en: Generation nuclear power plants 
+    description: 
+      de: Elektrizitätserzeugung aus Kernkraftwerken in Gigawattstunden 
+      fr: Production d'électricité des centrales nucléaires en gigawattheures 
+      it: Produzione di elettricità delle centrali nucleari in gigawattora 
+      en: Electricity generation from nuclear power plants in gigawatt hours 
+    dimension-type: Measure Dimension 
+    datatype: xsd:integer 
+    scale-type: ratio 
+    path: kernkraftwerk 
+    unit: GWh 
+    data-kind: 
+      type: 
+      unit: 
+    mapping: 
+      type: 
+      base: 
+      mappings: 
   
