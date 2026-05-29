@@ -164,7 +164,8 @@ def main() -> None:
 
     CSV_URL = "https://www.uvek-gis.admin.ch/BFE/ogd/35/ogd35_schweizerische_elektrizitaetsbilanz_monatswerte.csv"
     REQUIRED_COLUMNS = ["Jahr", "Monat", "Erzeugung_Laufwerk_GWh", "Erzeugung_Speicherwerk_GWh", "Erzeugung_Kernkraftwerk_GWh"]
-    METADATA_PATH = "inputs/metadata.yml"
+    METADATA_PATH = "inputs/full_metadata.yml"
+    # METADATA_PATH = "inputs/metadata.yml"
     OUTPUT_PATH = "outputs/cube.ttl"
 
     try:
