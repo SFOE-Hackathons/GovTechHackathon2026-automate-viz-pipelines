@@ -74,11 +74,27 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
     df.drop(columns=["Jahr", "Monat"], inplace=True)
 
     # Select desired columns
-    df = df[["Datum",  "Definitiv", "Erzeugung_Laufwerk_GWh", "Erzeugung_Speicherwerk_GWh", "Erzeugung_Kernkraftwerk_GWh"]]
+    df = df[[
+        "Datum",
+        "Definitiv",
+        "Erzeugung_Laufwerk_GWh",
+        "Erzeugung_Speicherwerk_GWh",
+        "Erzeugung_Kernkraftwerk_GWh",
+        "Erzeugung_andere_GWh",
+        "Erzeugung_Thermische_GWh",
+        "Erzeugung_Windkraft_GWh",
+        "Erzeugung_Photovoltaik_GWh"
+    ]]
 
- 
-    # Lowercase column names
-    df.columns = df.columns.str.lower()
+    df = (
+        df
+        .set_index(["datum", "definitiv"])[cols]
+        .stack()
+        .reset_index(name="gwh")
+    )
+
+    df.columns = ["datum", "definitiv", "erzeugungs_art", "gwh"]
+
 
     # Round numeric columns and cast to Int64
     numeric_cols = df.select_dtypes(include="number").columns
