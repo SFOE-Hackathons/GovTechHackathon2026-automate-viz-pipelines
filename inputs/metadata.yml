@@ -22,7 +22,7 @@ Contact Point:
   Name: OGD Bundesamt für Energie
 Base-URI: https://energy.ld.admin.ch/sfoe/ap # technical term - you need to have a defined name space in which your data 'lives'. If unsure ask BAR
 Identifier: ogd35schweizerischeelektrizitaetsbilanzmonatswerte # a unique (!) identifier for you data set
-Version: 2 # should be numeric
+Version: 3 # should be numeric
 Work Status: Draft
   # Draft or Published
 Visualize: true
@@ -83,3 +83,85 @@ dimensions:
       base: # for additive
       mappings: # for replacement
 
+  definitiv:
+    unit: 
+    data-kind: 
+      type: 
+      unit: 
+    mapping: 
+      type: 
+      base: 
+      mappings: 
+    
+  erzeugung_laufwerk_gwh: 
+    name: 
+      de: Erzeugung Laufwerk 
+      fr: Production centrales au fil de l’eau
+      it: Produzione centrali ad acqua fluente 
+      en: Generation run-of-river power plants 
+    description: 
+      de: Elektrizitätserzeugung aus Laufwasserkraftwerken in Gigawattstunden
+      fr: Production d'électricité des centrales au fil de l’eau en gigawattheures 
+      it: Produzione di elettricità delle centrali ad acqua fluente in gigawattora 
+      en: Electricity generation from run-of-river power plants in gigawatt hours 
+    dimension-type: Measure Dimension
+    datatype: xsd:integer 
+    scale-type: ratio 
+    path: laufwerk 
+    unit: GWh
+    data-kind: 
+      type: 
+      unit: 
+    mapping: 
+      type: 
+      base: 
+      mappings: 
+      
+  erzeugung_speicherwerk_gwh: 
+    name:
+      de: Erzeugung Speicherwerk 
+      fr: Production centrales à accumulation 
+      it: Produzione centrali ad accumulazione 
+      en: Generation storage power plants 
+    description: 
+      de: Elektrizitätserzeugung aus Speicherwerken in Gigawattstunden 
+      fr: Production d'électricité des centrales à accumulation en gigawattheures 
+      it: Produzione di elettricità delle centrali ad accumulazione in gigawattora 
+      en: Electricity generation from storage power plants in gigawatt hours 
+    dimension-type: Measure Dimension 
+    datatype: xsd:integer 
+    scale-type: ratio 
+    path: speicherwerk 
+    unit: GWh 
+    data-kind: 
+      type: 
+      unit: 
+    mapping: 
+      type: 
+      base: 
+      mappings: 
+      
+erzeugung_kernkraftwerk_gwh: 
+  name: 
+    de: Erzeugung Kernkraftwerk 
+    fr: Production centrales nucléaires 
+    it: Produzione centrali nucleari 
+    en: Generation nuclear power plants 
+  description: 
+    de: Elektrizitätserzeugung aus Kernkraftwerken in Gigawattstunden 
+    fr: Production d'électricité des centrales nucléaires en gigawattheures 
+    it: Produzione di elettricità delle centrali nucleari in gigawattora 
+    en: Electricity generation from nuclear power plants in gigawatt hours 
+  dimension-type: Measure Dimension 
+  datatype: xsd:integer 
+  scale-type: ratio 
+  path: kernkraftwerk 
+  unit: GWh 
+  data-kind: 
+    type: 
+    unit: 
+  mapping: 
+    type: 
+    base: 
+    mappings: 
+  
