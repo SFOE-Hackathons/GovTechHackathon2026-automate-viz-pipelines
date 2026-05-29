@@ -30,7 +30,7 @@ jobs:
     env:
       UPLOAD_METHOD: "PUT"
       UPLOAD_PATH: "outputs"
-      ENDPOINT_GRAPH: "https://linked.opendata.swiss/graph/sfoe/energyproduction"
+      ENDPOINT_GRAPH: "${ENDPOINT_GRAPH}"
       ENDPOINT_USER: ${{ secrets.ENDPOINT_USER }}
       ENDPOINT_PASSWORD: ${{ secrets.ENDPOINT_PASSWORD }}
       ENDPOINT_URL: ${{ secrets.ENDPOINT_URL }}
